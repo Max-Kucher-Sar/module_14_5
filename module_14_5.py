@@ -10,7 +10,7 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeybo
 
 
 
-api = '7707002977:AAHyl_62Ji9V_jZqeHhYrAKIYlklCjQhy3Q'
+api = ''
 bot = Bot(token=api)
 dp = Dispatcher(bot, storage=MemoryStorage())
 
