@@ -19,7 +19,7 @@ def initiate_db():
 
 def add_user(username, email, age):
     cursor.execute("INSERT INTO Users (username, email, age, balance) VALUES (?, ?, ?, ?)",
-                   (str(username), str(email), int(age), 1000))
+                   (username, email, age, 1000))
     connection.commit()
 
 def is_included(username):

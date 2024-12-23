@@ -10,7 +10,7 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeybo
 
 
 
-api = ''
+api = '7707002977:AAHyl_62Ji9V_jZqeHhYrAKIYlklCjQhy3Q'
 bot = Bot(token=api)
 dp = Dispatcher(bot, storage=MemoryStorage())
 
@@ -138,7 +138,8 @@ async def set_email(message, state):
 @dp.message_handler(state=RegistrationState.age)
 async def set_age(message, state):
     await state.update_data(age=message.text)
-    add_user(RegistrationState.username, RegistrationState.email, RegistrationState.age)
+    data = await state.get_data()
+    add_user(data['username'], data['email'], data['age'])
     await state.finish()
 
 
